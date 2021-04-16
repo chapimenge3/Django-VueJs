@@ -1,3 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+# restframewok
+from rest_framework import viewsets
+
+# Project
+from Todo.models import Todo
+from Todo.serializers import TodoSerializer
+
+
+class TodoViewset(viewsets.ModelViewSet):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
